@@ -1,28 +1,28 @@
-<!-- Form Name -->
-<legend>{l s='Add a comment'}</legend>
+<form><!-- Form Name -->
+<legend>{l s='Ajouter un commentaire'}</legend>
 
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
-    <label class="col-md-3 control-label" for="note">{l s='Note'}</label>
+    <label class="col-md-3 control-label" for="stars">{l s='Note'}</label>
     <div class="col-md-8">
-        <label class="radio-inline" for="note-0">
-            <input type="radio" name="note" id="note-0" value="1">
+        <label class="radio-inline" for="stars-0">
+            <input type="radio" name="stars" id="stars-0" value="1">
             1
         </label>
-        <label class="radio-inline" for="note-1">
-            <input type="radio" name="note" id="note-1" value="2">
+        <label class="radio-inline" for="stars-1">
+            <input type="radio" name="stars" id="stars-1" value="2">
             2
         </label>
-        <label class="radio-inline" for="note-2">
-            <input type="radio" name="note" id="note-2" value="3">
+        <label class="radio-inline" for="stars-2">
+            <input type="radio" name="stars" id="stars-2" value="3">
             3
         </label>
-        <label class="radio-inline" for="note-3">
-            <input type="radio" name="note" id="note-3" value="4">
+        <label class="radio-inline" for="stars-3">
+            <input type="radio" name="stars" id="stars-3" value="4">
             4
         </label>
-        <label class="radio-inline" for="note-4">
-            <input type="radio" name="note" id="note-4" value="5" checked="checked">
+        <label class="radio-inline" for="stars-4">
+            <input type="radio" name="stars" id="stars-4" value="5" checked="checked">
             5
         </label>
     </div>
@@ -40,7 +40,7 @@
 <div class="form-group">
     <label class="col-md-3 control-label" for="save"></label>
     <div class="col-md-8">
-        <button id="save" name="submitaddcomment" class="btn btn-success">{l s='Save'}</button>
+        <button id="save" name="submit" class="btn btn-success">{l s='Sauvegarder'}</button>
     </div>
 </div>
 

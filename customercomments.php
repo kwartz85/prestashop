@@ -5,7 +5,10 @@
  * Date: 21/02/2017
  * Time: 10:22
  *
- */class customercomments extends Module
+ */
+
+include_once 'models/modelcustomercomments.php';
+class customercomments extends Module
 {
     public function __construct()
     {
@@ -32,6 +35,15 @@
             && $this->installDb()
             && $this->registerHook('displayCustomerAccount')
         ;
+
+        $tab = new Tab();
+        $tab->class_name = 'AdminCustomerCommentController';
+        foreach (Language::getLanguages(true) as $lang) {
+            $tab->name[(int)$lang['id_lang']] = 'Customer comments';
+        }
+        $tab->id_parent = (int)Tab::getIdFromClassName('AdminCustomerCommentController');
+        $tab->module = $this->name;
+        $tab->add();
     }
 
     public function installDb()
@@ -56,5 +68,8 @@
     {
         Configuration::deleteByName('CUSTOMER_COMMENTS');
         return parent::uninstall();
+
+        $tab = new Tab((int)Tab::getIdFromClassName('AdminCustomerCommentController'));
+        $tab->delete();
     }
 }

@@ -14,15 +14,15 @@ class customercommentsmycommentModuleFrontController extends ModuleFrontControll
 {
     public function initContent()
     {
-        if
-        (Tools::getIsset('submitaddcomment')){
-            $this->context->smarty->assign(array(
-                'comment' => Tools::getValue('comment'),
-                'note' => Tools::getValue('note')
-            ));
-        }
-
         parent::initContent();
+        if (Tools::getIsset('comment')&& Tools::getIsset('stars'))
+        {
+            $comment= new CustomerCommentsModel();
+            $comment->id_customer = $this->context->customer->id;
+            $comment->comment = Tools::getValue('comment');
+            $comment->stars = Tools::getValue('stars');
+            $comment->add();
+        }
         return $this->setTemplate('form_comment.tpl');//permet de générer le template
     }
 }
