@@ -10,13 +10,8 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-class CustomerCommentMyControllerModuleFrontController extends ModuleFrontController
+class customercommentsmycommentModuleFrontController extends ModuleFrontController
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->context = Context::getContext();// pour appeler tous les objets
-    }
     public function initContent()
     {
         if

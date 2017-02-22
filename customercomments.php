@@ -47,11 +47,11 @@
             ) ENGINE='._MYSQL_ENGINE_.' DEFAULT CHARSET=utf8'
         );
     }
-
-    public function hookdisplayCustomerAccount($param)
+        public function hookDisplayCustomerAccount($params)
     {
-        return $this->hookdisplayCustomerAccount();
+        return $this->display(__FILE__,'comments_button.tpl');
     }
+
     public function uninstall()
     {
         Configuration::deleteByName('CUSTOMER_COMMENTS');
